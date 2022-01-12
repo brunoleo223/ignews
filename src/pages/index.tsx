@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
+import Image from 'next/image'
 import { SubscribeButton } from '../components/SubscribeButton';
 
 import styles from './home.module.scss';
 import { stripe } from '../services/stripe';
-import { FaProductHunt } from 'react-icons/fa';
 
 interface HomeProps {
   product: {
@@ -26,7 +26,7 @@ export default function Home({ product }: HomeProps) {
           <p>Get access to all the publications for <span>{product.amount} mounth</span></p>
           <SubscribeButton priceId={product.priceId} />
         </section>
-        <img src="/images/avatar.svg" alt="" />
+        <Image src="/images/avatar.svg" width={336} height={521} alt="" />
       </main>
     </>
   )
